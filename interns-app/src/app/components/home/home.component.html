@@ -1,2 +1,3 @@
-<app-interns></app-interns>
+<app-filter (emitSearchString)="receiveSearchString($event)"></app-filter>
+<app-interns [searchString]="searchString"></app-interns>
 <app-add-tool></app-add-tool>

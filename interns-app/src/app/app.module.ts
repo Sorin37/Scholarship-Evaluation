@@ -19,6 +19,7 @@ import { InternsComponent } from './components/interns/interns.component';
 import { AddInternComponent } from './components/add-intern/add-intern.component';
 import { AddToolComponent } from './components/add-tool/add-tool.component';
 import { EditInternComponent } from './components/edit-intern/edit-intern.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditInternComponent } from './components/edit-intern/edit-intern.compon
     InternsComponent,
     AddInternComponent,
     AddToolComponent,
-    EditInternComponent
+    EditInternComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
