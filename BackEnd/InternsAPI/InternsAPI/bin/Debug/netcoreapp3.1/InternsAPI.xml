@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InternsAPI</name>
+    </assembly>
+    <members>
+        <member name="M:InternsAPI.Controllers.InternController.GetInterns">
+            <summary>
+            Get all interns
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
