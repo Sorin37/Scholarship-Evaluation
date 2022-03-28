@@ -21,6 +21,7 @@ export class InternsComponent implements OnInit {
   ];
 
   @Input() searchString: string;
+  @Input() sortingMethod: string = 'ascending';
   constructor(private internService: InternService) {}
 
   ngOnInit(): void {
@@ -38,11 +39,13 @@ export class InternsComponent implements OnInit {
   }
   ngOnChanges(): void {
     var x = this.internService.getMatchingInterns(this.searchString);
-    this.interns = []
-    x.forEach(element => {
-      element.forEach(el => {
+    this.interns = [];
+    x.forEach((element) => {
+      element.forEach((el) => {
         this.interns.push(el);
       });
     });
+    this.interns.sort((a, b) => a.name.localeCompare(b.name));
+    if (this.sortingMethod == 'descending') this.interns.reverse();
   }
 }

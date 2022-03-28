@@ -1,10 +1,20 @@
 <div class="filter-container">
-  <div id="search-div" (click)="searchFilter()">
+  <div class="icon-div" (click)="searchFilter()">
     <button
       mat-icon-button
       onclick="document.getElementById('search-input').value = ''"
     >
       <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <div class="icon-div" (click)="establishSortingMethod('descending')">
+    <button mat-icon-button>
+      <mat-icon>trending_down</mat-icon>
+    </button>
+  </div>
+  <div class="icon-div" (click)="establishSortingMethod('ascending')">
+    <button mat-icon-button>
+      <mat-icon>trending_up</mat-icon>
     </button>
   </div>
   <div>

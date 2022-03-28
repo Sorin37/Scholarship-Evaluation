@@ -49,6 +49,7 @@ export class InternService {
       this.httpOptions
     );
   }
+  
   getMatchingInterns(searchString: string) {
     if (searchString !== undefined) {
       searchString = searchString.toLowerCase();
