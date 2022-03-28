@@ -23,14 +23,20 @@ namespace InternsAPI.Services
             return true;
         }
 
-        public Task<bool> Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await _interns.DeleteOneAsync(intern => intern.Id == id);
+            if (result.IsAcknowledged && result.DeletedCount == 0)
+            {
+                return false;
+            }
+            return true;
+
         }
 
-        public Task<Intern> Get(Guid id)
+        public async Task<Intern> Get(Guid id)
         {
-            throw new NotImplementedException();
+            return (await _interns.FindAsync(intern => intern.Id == id)).FirstOrDefault();
         }
 
         public async Task<List<Intern>> GetAll()
@@ -39,9 +45,17 @@ namespace InternsAPI.Services
             return result.ToList();
         }
 
-        public Task<bool> Update(Guid id, Intern model)
+        public async Task<bool> Update(Guid id, Intern intern)
         {
-            throw new NotImplementedException();
+            intern.Id = id;
+            var result = await _interns.ReplaceOneAsync(n => n.Id == id, intern);
+
+            if (!result.IsAcknowledged && result.ModifiedCount == 0)
+            {
+                await _interns.InsertOneAsync(intern);
+                return false;
+            }
+            return true;
         }
     }
 }

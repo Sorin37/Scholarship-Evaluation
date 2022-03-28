@@ -10,5 +10,27 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:InternsAPI.Controllers.InternController.CreateIntern(InternsAPI.Models.Intern)">
+            <summary>
+            Create an intern
+            </summary>
+            <param name="intern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InternsAPI.Controllers.InternController.UpdateIntern(System.Guid,InternsAPI.Models.Intern)">
+            <summary>
+            Update an intern
+            </summary>
+            <param name="id"></param>
+            <param name="intern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InternsAPI.Controllers.InternController.DeleteIntern(System.Guid)">
+            <summary>
+            Delete intern
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
