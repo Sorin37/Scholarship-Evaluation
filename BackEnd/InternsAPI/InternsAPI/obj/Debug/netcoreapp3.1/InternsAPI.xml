@@ -10,6 +10,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:InternsAPI.Controllers.InternController.GetInternById(System.Guid)">
+            <summary>
+            Get intern by id
+            </summary>
+        </member>
         <member name="M:InternsAPI.Controllers.InternController.CreateIntern(InternsAPI.Models.Intern)">
             <summary>
             Create an intern

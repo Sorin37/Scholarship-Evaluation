@@ -29,6 +29,20 @@ namespace InternsAPI.Controllers
         }
 
         /// <summary>
+        /// Get intern by id
+        /// </summary>
+        [HttpGet("{internId}")]
+        public async Task<IActionResult> GetInternById(Guid internId)
+        {
+            var result = await _internCollectionService.Get(internId);
+            if (result == null)
+            {
+                return NotFound($"No intern found with id {internId}");
+            }
+            return Ok(result);
+        }
+
+        /// <summary>
         /// Create an intern
         /// </summary>
         /// <param name="intern"></param>

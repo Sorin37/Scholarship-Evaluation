@@ -22,11 +22,23 @@ export class InternService {
       this.httpOptions
     );
   }
+  getIntern(id:string){
+    return this.httpClient.get<Intern>(
+      this.baseUrl + '/Intern/' + id,
+      this.httpOptions
+    );
+  }
   addIntern(intern: Intern) {
     return this.httpClient.post(
       this.baseUrl + '/Intern',
       intern,
       this.httpOptions
     );
+  }
+  deleteIntern(id:string){
+    return this.httpClient.delete(this.baseUrl + '/Intern/' + id, this.httpOptions);
+  }
+  updateIntern(intern:Intern){
+    return this.httpClient.put(this.baseUrl + '/Intern/' + intern.id, intern, this.httpOptions);
   }
 }

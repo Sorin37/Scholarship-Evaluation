@@ -27,4 +27,12 @@ export class InternsComponent implements OnInit {
     });
   }
 
+  deleteIntern(id: string) {
+    this.internService.deleteIntern(id).subscribe((interns: Intern[]) => {
+      this.interns = interns;
+    });
+    this.internService.getInterns().subscribe((interns: Intern[]) => {
+      this.interns = interns;
+    });
+  }
 }

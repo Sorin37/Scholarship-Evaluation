@@ -10,7 +10,7 @@
     {{ intern.age }}
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button><mat-icon>edit</mat-icon></button>
-    <button mat-button><mat-icon>delete</mat-icon></button>
+    <button mat-button routerLink="/edit-intern/{{intern.id}}"><mat-icon>edit</mat-icon></button>
+    <button mat-button (click)="deleteIntern(intern.id)"><mat-icon>delete</mat-icon></button>
   </mat-card-actions>
 </mat-card>

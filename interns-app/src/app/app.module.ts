@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InternsComponent } from './components/interns/interns.component';
 import { AddInternComponent } from './components/add-intern/add-intern.component';
 import { AddToolComponent } from './components/add-tool/add-tool.component';
+import { EditInternComponent } from './components/edit-intern/edit-intern.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddToolComponent } from './components/add-tool/add-tool.component';
     HomeComponent,
     InternsComponent,
     AddInternComponent,
-    AddToolComponent
+    AddToolComponent,
+    EditInternComponent
   ],
   imports: [
     BrowserModule,
