@@ -16,9 +16,16 @@ export class InternService {
   };
   constructor(private httpClient: HttpClient) { }
 
-  getNotes(): Observable<Intern[]> {
+  getInterns(): Observable<Intern[]> {
     return this.httpClient.get<Intern[]>(
       this.baseUrl + '/Intern',
+      this.httpOptions
+    );
+  }
+  addIntern(intern: Intern) {
+    return this.httpClient.post(
+      this.baseUrl + '/Intern',
+      intern,
       this.httpOptions
     );
   }

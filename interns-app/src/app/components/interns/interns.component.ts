@@ -22,7 +22,7 @@ export class InternsComponent implements OnInit {
   constructor(private internService: InternService) { }
 
   ngOnInit(): void {
-    this.internService.getNotes().subscribe((interns: Intern[]) => {
+    this.internService.getInterns().subscribe((interns: Intern[]) => {
       this.interns = interns;
     });
   }

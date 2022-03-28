@@ -16,12 +16,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { InternsComponent } from './components/interns/interns.component';
+import { AddInternComponent } from './components/add-intern/add-intern.component';
+import { AddToolComponent } from './components/add-tool/add-tool.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InternsComponent
+    InternsComponent,
+    AddInternComponent,
+    AddToolComponent
   ],
   imports: [
     BrowserModule,

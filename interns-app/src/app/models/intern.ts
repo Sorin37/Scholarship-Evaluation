@@ -1,6 +1,6 @@
 export interface Intern {
     id?: string;
     name: string;
-    age: number;
+    age: string;
     dateOfBirth: string;
 }

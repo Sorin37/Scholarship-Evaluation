@@ -1,0 +1,44 @@
+<h1>Add an intern</h1>
+<label>Name</label>
+<form [formGroup]="form">
+  <mat-form-field>
+    <input
+      matInput
+      name="inputIntern"
+      [(ngModel)]="name"
+      placeholder="Enter your title"
+      type="text"
+      formControlName="name"
+      required
+    />
+  </mat-form-field>
+  <div *ngIf="name2.errors?.['required']">Title is required.</div>
+  <div *ngIf="name2.errors?.['minlength']">
+    Title must be at least 5 characters long.
+  </div>
+</form>
+<form>
+  <label>Age</label>
+  <br />
+  <mat-form-field>
+    <textarea
+      matInput
+      name="inputIntern"
+      [(ngModel)]="age"
+      placeholder="Enter your description"
+    ></textarea>
+  </mat-form-field>
+</form>
+<form>
+  <label>Date of birth</label>
+  <br />
+  <mat-form-field>
+    <textarea
+      matInput
+      name="inputIntern"
+      [(ngModel)]="dateOfBirth"
+      placeholder="Enter your date of birth"
+    ></textarea>
+  </mat-form-field>
+</form>
+<button mat-button (click)="addIntern()">Add</button>
