@@ -6,39 +6,50 @@
       matInput
       name="inputIntern"
       [(ngModel)]="name"
-      placeholder="Enter your title"
+      placeholder="Enter your name:"
       type="text"
       formControlName="name"
       required
     />
   </mat-form-field>
-  <div *ngIf="name2.errors?.['required']">Title is required.</div>
-  <div *ngIf="name2.errors?.['minlength']">
-    Title must be at least 5 characters long.
-  </div>
+  <div *ngIf="name2.errors?.['required']" [style.color]="'red'">Name is required.</div>
 </form>
-<form>
+<form [formGroup]="form">
   <label>Age</label>
   <br />
   <mat-form-field>
-    <textarea
+    <input
       matInput
       name="inputIntern"
       [(ngModel)]="age"
-      placeholder="Enter your description"
-    ></textarea>
+      placeholder="Enter your age:"
+      type="text"
+      formControlName="age"
+      required
+    >
   </mat-form-field>
+  <div *ngIf="age2.errors?.['required']" [style.color]="'red'">Age is required.</div>
 </form>
-<form>
+<form [formGroup]="form">
   <label>Date of birth</label>
   <br />
   <mat-form-field>
-    <textarea
-      matInput
-      name="inputIntern"
-      [(ngModel)]="dateOfBirth"
-      placeholder="Enter your date of birth"
-    ></textarea>
+    <input
+    matInput
+    name="inputIntern"
+    [(ngModel)]="dateOfBirth"
+    placeholder="Enter your date of birth:"
+    type="text"
+    formControlName="dateOfBirth"
+    required
+    >
   </mat-form-field>
 </form>
-<button mat-button (click)="addIntern()" routerLink="">Add</button>
+<button
+  mat-button
+  (click)="addIntern()"
+  routerLink=""
+  [disabled]="name2.errors?.['required'] || age2.errors?.['required'] || dateOfBirth2.errors?.['required']"
+>
+  Add
+</button>

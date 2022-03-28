@@ -31,8 +31,8 @@ export class EditInternComponent implements OnInit {
       this.dateOfBirth = intern.dateOfBirth;
     });
     this.form = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      age: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      age: new FormControl('', [Validators.required]),
       dateOfBirth: new FormControl('', [Validators.required]),
     });
   }
@@ -48,7 +48,7 @@ export class EditInternComponent implements OnInit {
     return this.form.get('dateOfBirth');
   }
 
-  async editIntern(): Promise<void> {
+  editIntern(): void {
     const intern: Intern = {
       id: this.parameterValue,
       name: this.name,
@@ -56,6 +56,5 @@ export class EditInternComponent implements OnInit {
       dateOfBirth: this.dateOfBirth,
     };
     this.internService.updateIntern(intern).subscribe();
-    await delay(1000);
   }
 }
